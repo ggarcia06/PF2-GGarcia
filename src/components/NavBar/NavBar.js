@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand href="#home"><img src={ logo } class="logo" alt="logo" />
+                <Navbar.Brand href="#home"><img src={ logo } className="logo" alt="logo" />
 </Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="#home">Componentes de PC</Nav.Link>
