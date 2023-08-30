@@ -12,3 +12,68 @@ font-size: 20px;
   width: 100%;
   height: 100px;
 }
+
+.itemCount{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 150px;
+}
+.itemCount span{
+  color: black;
+  padding: 20px;
+}
+
+.itemCount div{
+  display: inline-block;
+
+  border: solid 1px;
+  border-radius: 5px;
+}
+
+.itemCountButton{
+border-radius: 15px;
+border-color: #0197F6;
+background-color: #0197F6;
+color: white;
+}
+
+.item-detail-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-detail{
+  color:antiquewhite;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  border: solid 4px black;
+  margin-bottom: 30px;
+  width: 80%;
+  background-color: #4b6464;
+}
+
+.item-detail img{
+width: 500px;
+  height: 100%;
+}
+
+.item-detail h1{
+  font-size: 30px;
+  text-align: center;
+}
+
+.add{
+  background-color: white;
+}
+
+.list-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
