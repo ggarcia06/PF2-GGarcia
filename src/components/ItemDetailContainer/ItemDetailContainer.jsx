@@ -14,7 +14,6 @@ const ItemDetailContainer = ({ greeting }) => {
         const promise = new Promise((resolve, reject) => {
             setTimeout(() => {
                 const productById = data.find(product => product.id === Number(id));
-                console.log(id)
                 resolve(productById)
             }, 2000);
         });

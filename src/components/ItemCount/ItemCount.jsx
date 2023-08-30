@@ -23,7 +23,7 @@ export const ItemCount = () => {
             <span>{count}</span>
             <span onClick={ handleIncreaseCount }>+</span>
             </div>
-            <button className="itemCountButton">Agregar al carrito</button>
+            <button className="itemCountButton" onClick={()=>alert("usted agrego " + count + " items al carrito")}>Agregar al carrito</button>
         </div>
     )
 }

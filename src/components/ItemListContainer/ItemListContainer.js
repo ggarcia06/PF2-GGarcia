@@ -21,14 +21,11 @@ const ItemListContainer = ({ greeting }) => {
                 const productsFiltered = data.filter(
                     (product) => product.category === id  
                 );
-                console.log(productsFiltered);
                 setProducts(productsFiltered);
             }
 
         });
-    }, [])
-
-    console.log(products);
+    }, [id]);
 
     return (
         <Container className="mt-4">
