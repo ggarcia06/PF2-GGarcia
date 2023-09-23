@@ -1,27 +1,47 @@
 import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import data from '../../data/products.json';
-import { ItemList } from '../ItemList/ItemList';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
+import { getDoc, doc } from 'firebase/firestore';
+import {db} from '../../services/firebase/firebaseConfig' 
 
 const ItemDetailContainer = ({ greeting }) => {
     const [product, setProduct] = useState([null]);
-
+    const [loading, setLoading] = useState (true)
     const {id} = useParams()
 
     useEffect(() => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const productById = data.find(product => product.id === Number(id));
-                resolve(productById)
-            }, 2000);
-        });
 
-        promise.then(data => setProduct(data));
+        setLoading(true)
 
-    }, [])
-    if(!product) return <div>LOADING...</div>;
+        const docRef = doc(db, 'productos', id)
+
+        getDoc(docRef)
+        .then(response =>{
+            //const data = response.data()
+            
+            //const productAdapted = { id: response.id, ...reponse.data}
+            setProduct({ id: response.id, ...response.data})
+        
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        .finally(() => {
+            setLoading(false)
+        })
+    
+//      const promise = new Promise((resolve, reject) => {
+//            setTimeout(() => {
+//                const productById = data.find(product => product.id === Number(id));
+//                resolve(productById)
+//            }, 2000);
+//        });
+
+ //       promise.then(data => setProduct(data));
+
+    }, [id])
+    if(loading) return <div>LOADING...</div>;
 
 
     return (

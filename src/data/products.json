@@ -5,7 +5,8 @@
         "name": "MSI MPG B550 GAMING PLUS",
         "img": "https://images.unsplash.com/photo-1586685117760-ceb2c17ed8fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "precio": 46222,
-        "descripcion": "La serie MPG saca lo mejor de los jugadores al permitir una expresión completa en color con control avanzado de iluminación RGB y sincronización."
+        "descripcion": "La serie MPG saca lo mejor de los jugadores al permitir una expresión completa en color con control avanzado de iluminación RGB y sincronización.",
+        "alt": "Placa Madre MSI MPG B550"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "name": "Corsair Vengeance LPX DDR4 3200MHz PC4-25600 32GB 2x16GB CL16",
         "img": "https://images.unsplash.com/photo-1592664474505-51c549ad15c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "precio": 18600,
-        "descripcion": "HyperX kf432c16bb/8-3200 CL16 es un módulo de memoria de 1G x 64 bits (8GB) SDRAM (DRAM sincrónica) 1Rx8- - basado en ocho componentes FBGA de 1G x 8 bits por módulo. Cada kit de módulo admite Intel® Extreme Memory Profiles (Intel® XMP) 2.0."
+        "descripcion": "HyperX kf432c16bb/8-3200 CL16 es un módulo de memoria de 1G x 64 bits (8GB) SDRAM (DRAM sincrónica) 1Rx8- - basado en ocho componentes FBGA de 1G x 8 bits por módulo. Cada kit de módulo admite Intel® Extreme Memory Profiles (Intel® XMP) 2.0.",
+        "alt": "Memoria RAM Corsair Vengeance LPX DDR4 3200MHz"
     }, 
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "name": "MOUSE G203 LIGHTSYNC GAMING BLACK (910-005793) - LOGITECH",
         "img": "https://images.unsplash.com/photo-1613141411244-0e4ac259d217?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "precio": 19200,
-        "descripcion": "efecto óptico arcoíris LIGHTSYNC RGB, 6 botones programables, memoria integrada, mapeo de pantalla, compatible con ordenadores PC/Mac y portátiles, negro"
+        "descripcion": "efecto óptico arcoíris LIGHTSYNC RGB, 6 botones programables, memoria integrada, mapeo de pantalla, compatible con ordenadores PC/Mac y portátiles, negro",
+        "alt": "Mouse G203 LIGHTSYNC NEGRO"
     }, 
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "name": "MOUSE G304 GAMING BLACK (86546) - LOGITECH",
         "img": "https://images.unsplash.com/photo-1629429408209-1f912961dbd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "precio": 16300,
-        "descripcion": "efecto óptico arcoíris LIGHTSYNC RGB, 6 botones programables, memoria integrada, mapeo de pantalla, compatible con ordenadores PC/Mac y portátiles, negro"
+        "descripcion": "efecto óptico arcoíris LIGHTSYNC RGB, 6 botones programables, memoria integrada, mapeo de pantalla, compatible con ordenadores PC/Mac y portátiles, negro",
+        "alt": "Mouse G203 LIGHTSYNC NEGRO"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "name": "Impresora HP Smart Tank 210",
         "img": "https://plus.unsplash.com/premium_photo-1682145818233-6b4db2365ec3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "precio": 150300,
-        "descripcion": "La impresora HP Smart Tank 210 cuenta con un diseño de fácil configuración guiada por dispositivo móvil y la impresora le indica qué hacer luego con botones inteligentes."
+        "descripcion": "La impresora HP Smart Tank 210 cuenta con un diseño de fácil configuración guiada por dispositivo móvil y la impresora le indica qué hacer luego con botones inteligentes.",
+        "alt": "Impresora HP Smart Tank 210"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "name": "Disco RÍgido Hdd Seagate 1tb Sata Iii 64mb Barracuda St1000dm010",
         "img": "https://images.unsplash.com/photo-1601737487795-dab272f52420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         "precio": 16220,
-        "descripcion": " Capacidad: 1 TB - Cache: 64 MB - Factor de forma: 3.5” - Máx. velocidad de transferencia sostenida OD: 210MB/s- Interfaz: SATA a 6 Gb/s"   
+        "descripcion": " Capacidad: 1 TB - Cache: 64 MB - Factor de forma: 3.5” - Máx. velocidad de transferencia sostenida OD: 210MB/s- Interfaz: SATA a 6 Gb/s",
+        "alt": "Disco Rigido HDD 1T Seagate"   
     },
     {
         "id": 7,
@@ -53,6 +59,7 @@
         "name": "D-Link Router D-Link DIR-819 DBAND",
         "img": "https://images.unsplash.com/photo-1516044734145-07ca8eef8731?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
         "precio": 30250,
-        "descripcion": " ROUTER DL DIR-819 DBAND D-Link DIR-819 - Enrutador inalámbrico - conmutador de 4 puertos - 802.11a/b/g/n/ac - Doble banda Detalles - Descripción del producto:D-Link DIR-819 - enrutador inalámbrico - 802.11a/b/g/n/ac - sobremesa - Tipo de dispositivo:Enrutador inalámbrico - conmutador de 4 puertos (integrado)"  
+        "descripcion": " ROUTER DL DIR-819 DBAND D-Link DIR-819 - Enrutador inalámbrico - conmutador de 4 puertos - 802.11a/b/g/n/ac - Doble banda Detalles - Descripción del producto:D-Link DIR-819 - enrutador inalámbrico - 802.11a/b/g/n/ac - sobremesa - Tipo de dispositivo:Enrutador inalámbrico - conmutador de 4 puertos (integrado)",
+        "alt": "Router DIR-819 DBAND D-Link"  
     }
 ]
