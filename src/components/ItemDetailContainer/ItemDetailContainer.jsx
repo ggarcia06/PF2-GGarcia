@@ -15,14 +15,15 @@ const ItemDetailContainer = ({ greeting }) => {
         setLoading(true)
 
         const docRef = doc(db, 'productos', id)
+    
 
         getDoc(docRef)
         .then(response =>{
             //const data = response.data()
             
             //const productAdapted = { id: response.id, ...reponse.data}
-            setProduct({ id: response.id, ...response.data})
-        
+            setProduct({ id: response.id, ...response.data() })
+        console.log(setProduct)
         })
         .catch(error => {
             console.log(error)

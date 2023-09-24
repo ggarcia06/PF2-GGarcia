@@ -6,16 +6,17 @@ import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from '../../services/firebase/firebaseConfig';
 
+
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { id } = useParams();
+    const { categoryId } = useParams();
 
     useEffect(() => {
         //const db = getFirestore();
 
-        const refCollection = id
-            ? query(collection(db, "productos"), where("categoryId", "==", id))
+        const refCollection = categoryId
+            ? query(collection(db, "productos"), where("category", "==", categoryId))
             : collection(db, "productos");
 
         getDocs(refCollection)
@@ -34,7 +35,7 @@ const ItemListContainer = ({ greeting }) => {
                 setLoading(false)
             })
 
-    }, [id])
+    }, [categoryId])
 
     if (loading) return <div>Loading . . .</div>
 
