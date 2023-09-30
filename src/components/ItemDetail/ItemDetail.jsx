@@ -1,11 +1,11 @@
-//import { useContext } from 'react';
+import { useContext } from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
-//import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 
 export const ItemDetail = ({ product }) => {
-    //const { addItem } = useContext(CartContext)
-    //const onAdd = count => addItem(product, count)
-    const onAdd = count => console.log(product, count)
+    const { addToCart } = useContext(CartContext)
+    const onAdd = count => addToCart(product, count)
+    //const onAdd = count => console.log(product, count)
     return(
     <div className='item-detail-container'> 
     <div className="item-detail">
