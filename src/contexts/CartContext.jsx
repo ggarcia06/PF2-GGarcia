@@ -28,9 +28,9 @@ export const CartProvider = ({ children }) => {
 
 
     //setCartItems(prev => [...prev, { ...product, quantity }])
-    console.log(cartItems)
+     console.log(cartItems)
 
-    const totalWidget = cartItems.reduce((acc, val) => acc + val.quantity, 0)
+    const totalWidget = cartItems.reduce((act, val) => act + val.quantity, 0)
 
     console.log(totalWidget)
 

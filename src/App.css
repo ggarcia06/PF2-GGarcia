@@ -1,79 +1,135 @@
-
-span{
+span {
   color: white;
-font-size: 20px;
+  font-size: 20px;
 }
 
 #cart {
   filter: invert(0.6);
 }
 
-.logo{
+.logo {
   width: 100%;
   height: 100px;
 }
 
-.itemCount{
-  display:flex;
+.itemCount {
+  display: flex;
   flex-direction: column;
   gap: 10px;
   width: 150px;
 }
-.itemCount span{
+
+.itemCount span {
   color: black;
   padding: 20px;
 }
 
-.itemCount div{
+.itemCount div {
   display: inline-block;
 
   border: solid 1px;
   border-radius: 5px;
 }
 
-.itemCountButton{
-border-radius: 15px;
-border-color: #0197F6;
-background-color: #0197F6;
-color: white;
+.itemCountButton {
+  border-radius: 15px;
+  border-color: #0197F6;
+  background-color: #0197F6;
+  color: white;
 }
 
-.item-detail-container{
+.item-detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.item-detail{
-  color:antiquewhite;
+.item-detail {
+  color: antiquewhite;
   padding: 50px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   border: solid 4px black;
   margin-bottom: 30px;
   width: 80%;
   background-color: #4b6464;
 }
 
-.item-detail img{
-width: 400px;
+.item-detail img {
+  width: 300px;
   height: 100%;
 }
 
-.item-detail h1{
-  font-size: 30px;
+.item-detail h1 {
+  font-size: 25px;
   text-align: center;
 }
 
-.add{
+.item-detail h2 {
+  font-size: 22px;
+}
+
+.add {
   background-color: white;
 }
 
-.list-container{
+.list-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
+.cartView {
+  background-color: #4b6464;
+}
+
+.cartItemsCards {
+  padding: 25px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cartItemsCard {
+  background-color: rgb(243, 241, 238);
+  height: 210px;
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.imgCartItem {
+  width: 20%;
+  min-width: 170px;
+}
+
+.imgCartItem img {
+  height: 170px;
+  width: 100%;
+}
+
+.infoCartItem {
+  width: 65%;
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoCartItem h2 {
+  font-size: 20px;
+}
+
+.deleteButton {
+  background-color: #555757;
+  border-radius: 10px;
+  border-color: #555757;
+
+}
+
+.deleteButton img {
+  width: 30px;
+  filter: invert(96%) sepia(4%) saturate(542%) hue-rotate(215deg) brightness(96%) contrast(95%);
+}
