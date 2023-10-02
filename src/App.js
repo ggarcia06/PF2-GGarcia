@@ -10,6 +10,7 @@ import { Cart } from './components/Cart/Cart';
 
 function App() {
   return (
+    
     <div className="App">
       <CartProvider>
         <BrowserRouter>

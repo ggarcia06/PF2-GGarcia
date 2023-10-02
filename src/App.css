@@ -105,6 +105,9 @@ span {
   width: 20%;
   min-width: 170px;
 }
+.cartContainer{
+  padding: 20px;
+}
 
 .imgCartItem img {
   height: 170px;
@@ -132,4 +135,42 @@ span {
 .deleteButton img {
   width: 30px;
   filter: invert(96%) sepia(4%) saturate(542%) hue-rotate(215deg) brightness(96%) contrast(95%);
+}
+
+.orderSummary{
+  background-color: rgb(243, 241, 238);
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cartbg{
+  
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+.removeAllItems{
+  margin-top: 30px;
+  background-color: #cde4e3;
+  width: 250px;
+  height: 45px;
+  border-radius: 12px;
+  border:none;
+  font-size: 20px;
+  color: #000000;
+}
+
+.checkoutButton{
+  background-color: #29514f;
+  width: 200px;
+  height: 45px;
+  border-radius: 12px;
+  border:none;
+  font-size: 20px;
+  color: #f4f4f9;
 }
