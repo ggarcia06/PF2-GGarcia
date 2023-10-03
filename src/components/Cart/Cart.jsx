@@ -8,7 +8,7 @@ import trash from '../../assets/trash.svg'
 
 
 export const Cart = () => {
-    const { cartItems, removeItem, totalWidget } = useContext(CartContext)
+    const { cartItems, removeItem, totalWidget, totalPrice, clear } = useContext(CartContext)
 
     if (!totalWidget) {
         return <div className="cartbg"><h1>No hay items en tu carrito</h1></div>
@@ -35,11 +35,11 @@ export const Cart = () => {
                         <div className="orderSummary">
                             <h3>Resumen de compra:</h3>
                             <h4>Total de productos: {totalWidget}</h4>
-                            <h4>Precio final:</h4>
+                            <h4>Precio final: ${totalPrice}</h4>
                             <button className="checkoutButton">Finalizar compra</button>
                         </div>
                         <div>
-                            <button className="removeAllItems">Vaciar carrito</button>
+                            <button className="removeAllItems" onClick={()=>clear()}>Vaciar carrito</button>
                         </div>
                     </div>
 
