@@ -1,7 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import Container from 'react-bootstrap/Container';
 import trash from '../../assets/trash.svg'
+import Form from 'react-bootstrap/Form';
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../../services/firebase/firebaseConfig';
+
 
 
 
@@ -10,8 +14,48 @@ import trash from '../../assets/trash.svg'
 export const Cart = () => {
     const { cartItems, removeItem, totalWidget, totalPrice, clear } = useContext(CartContext)
 
+    const [formValues, setFormValues] = useState({
+        name:"",
+        phone:"",
+        email:"",
+    })
+
+    const sendOrder = () => {
+        const order = {
+            buyer: formValues, cartItems, total: totalPrice,
+        }
+
+       const orderCollection = collection(db, "orders")
+
+
+       addDoc(orderCollection, order).then(({ id }) => {
+           if (id) {
+               setFormValues({
+                   name:"",
+                   phone:"",
+                   email: "",
+               })
+               clear()
+               alert("Tu orden: " + id + " ha sido enviada")
+           }
+       })
+    }
+
+    const handleChange = e => {
+        setFormValues(prev => ({...prev, [e.target.name]: e.target.value,
+        }))
+        console.log(formValues)
+    }
+
+
     if (!totalWidget) {
-        return <div className="cartbg"><h1>No hay items en tu carrito</h1></div>
+        return (
+            <div className="cartbg">
+                <h1>No hay items en tu carrito</h1>
+                <button className="index">Volver</button>
+            </div>
+        )
+
     } else {
         return (
             <main className="cartView">
@@ -36,12 +80,52 @@ export const Cart = () => {
                             <h3>Resumen de compra:</h3>
                             <h4>Total de productos: {totalWidget}</h4>
                             <h4>Precio final: ${totalPrice}</h4>
-                            <button className="checkoutButton">Finalizar compra</button>
+                            
                         </div>
                         <div>
-                            <button className="removeAllItems" onClick={()=>clear()}>Vaciar carrito</button>
+                            <button className="removeAllItems" onClick={() => clear()}>Vaciar carrito</button>
+                        </div>
+                        <div className="cont">
+                            <div className="userData">
+                                <h5>INGRESAR DATOS DE USUARIO</h5>
+                                <div className="form">
+                                    <>
+                                        <Form.Label htmlFor="inputPassword5" className="label">Nombre</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            id="inputPassword5"
+                                            aria-describedby="passwordHelpBlock"
+                                            value={formValues.name}
+                                            onChange={handleChange}
+                                            name="name"
+                                        />
+                                        <Form.Label htmlFor="inputPassword5" className="label">email</Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            id="inputPassword5"
+                                            aria-describedby="passwordHelpBlock"
+                                            value={formValues.email}
+                                            onChange={handleChange}
+                                            name="email"
+                                        />
+                                        <Form.Label htmlFor="inputPassword5" className="label">Telefono</Form.Label>
+                                        <Form.Control
+                                            type="tel"
+                                            id="inputPassword5"
+                                            aria-describedby="passwordHelpBlock"
+                                            value={formValues.phone}
+                                            onChange={handleChange}
+                                            name="phone"
+                                        />
+
+                                    </>
+                                </div>
+                                <button className="checkoutButton" onClick={sendOrder}>Finalizar compra</button>
+                            </div>
+                            
                         </div>
                     </div>
+
 
                 </Container>
             </main>
