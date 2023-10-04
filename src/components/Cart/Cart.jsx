@@ -5,7 +5,9 @@ import trash from '../../assets/trash.svg'
 import Form from 'react-bootstrap/Form';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../services/firebase/firebaseConfig';
-
+import Swal from 'sweetalert2'
+// import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -36,7 +38,7 @@ export const Cart = () => {
                    email: "",
                })
                clear()
-               alert("Tu orden: " + id + " ha sido enviada")
+               Swal.fire("Tu orden No: " + id + " ha sido enviada, pronto recibiras un correo con la informacion y el estado de tu compra ")
            }
        })
     }

@@ -1,4 +1,6 @@
 import { createContext, useState } from "react"
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const CartContext = createContext([])
 
@@ -19,15 +21,10 @@ export const CartProvider = ({ children }) => {
                     else return item
             })
             setCartItems(actualizarProductos)
+            quantity === 1? toast("Agregaste " + quantity + " producto al carrito") : toast("Agregaste " + quantity + " productos al carrito")
         }
     }
 
-
-
-
-
-
-    //setCartItems(prev => [...prev, { ...product, quantity }])
      console.log(cartItems)
 
     const totalWidget = cartItems.reduce((act, val) => act + val.quantity, 0)
