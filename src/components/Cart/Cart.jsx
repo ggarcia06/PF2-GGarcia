@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../services/firebase/firebaseConfig';
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
@@ -38,14 +39,13 @@ export const Cart = () => {
                    email: "",
                })
                clear()
-               Swal.fire("Tu orden No: " + id + " ha sido enviada, pronto recibiras un correo con la informacion y el estado de tu compra ")
+               Swal.fire("Tu Orden No: " + id + " ha sido enviada, pronto recibiras un correo con la informacion y el estado de tu compra ")
            }
        })
     }
 
     const handleChange = e => {
-        setFormValues(prev => ({...prev, [e.target.name]: e.target.value,
-        }))
+        e.target.value === "" ? alert("Faltan campos por completar") : setFormValues(prev => ({...prev, [e.target.name]: e.target.value, }))
         console.log(formValues)
     }
 
@@ -54,7 +54,7 @@ export const Cart = () => {
         return (
             <div className="cartbg">
                 <h1>No hay items en tu carrito</h1>
-                <button className="index">Volver</button>
+                <Link to="/"><button className="index">Volver</button></Link>
             </div>
         )
 
