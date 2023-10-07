@@ -18,35 +18,42 @@ export const Cart = () => {
     const { cartItems, removeItem, totalWidget, totalPrice, clear } = useContext(CartContext)
 
     const [formValues, setFormValues] = useState({
-        name:"",
-        phone:"",
-        email:"",
+        name: "",
+        phone: "",
+        email: "",
     })
 
     const sendOrder = () => {
-        const order = {
-            buyer: formValues, cartItems, total: totalPrice,
+        if (formValues.name !== '' && formValues.phone !== '' && formValues.email !== '') {
+            const order = {
+                buyer: formValues, cartItems, total: totalPrice,
+            }
+
+            const orderCollection = collection(db, "orders")
+
+
+            addDoc(orderCollection, order).then(({ id }) => {
+                if (id) {
+                    setFormValues({
+                        name: "",
+                        phone: "",
+                        email: "",
+                    })
+                    clear()
+                    Swal.fire("Tu Orden No: " + id + " ha sido enviada, pronto recibiras un correo con la informacion y el estado de tu compra ")
+                }
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Es necesario completar todos los campos antes de enviar el formulario'
+            })
         }
-
-       const orderCollection = collection(db, "orders")
-
-
-       addDoc(orderCollection, order).then(({ id }) => {
-           if (id) {
-               setFormValues({
-                   name:"",
-                   phone:"",
-                   email: "",
-               })
-               clear()
-               Swal.fire("Tu Orden No: " + id + " ha sido enviada, pronto recibiras un correo con la informacion y el estado de tu compra ")
-           }
-       })
     }
 
     const handleChange = e => {
-        e.target.value === "" ? alert("Faltan campos por completar") : setFormValues(prev => ({...prev, [e.target.name]: e.target.value, }))
-        console.log(formValues)
+        setFormValues(prev => ({ ...prev, [e.target.name]: e.target.value, }))
     }
 
 
@@ -82,7 +89,7 @@ export const Cart = () => {
                             <h3>Resumen de compra:</h3>
                             <h4>Total de productos: {totalWidget}</h4>
                             <h4>Precio final: ${totalPrice}</h4>
-                            
+
                         </div>
                         <div>
                             <button className="removeAllItems" onClick={() => clear()}>Vaciar carrito</button>
@@ -124,7 +131,7 @@ export const Cart = () => {
                                 </div>
                                 <button className="checkoutButton" onClick={sendOrder}>Finalizar compra</button>
                             </div>
-                            
+
                         </div>
                     </div>
 
