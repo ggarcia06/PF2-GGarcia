@@ -1,70 +1,83 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# G2Tecnologia Ecommerce 
 
-## Available Scripts
+El proyecto consiste en una pagina de Ecommerce para la venta de articulos de informatica desarrollada con React, usando algunos componentes de Boostrap, toastify y sweetalert. Permite ver un catalogo completo de los productos o navegar por las diferentes categorias, ademas de poder seleccionar un item y ver la descripcion detallada del producto seleccionado.
 
-In the project directory, you can run:
 
-### `npm start`
+![Logo](https://github.com/ggarcia06/PF2-GGarcia/blob/main/src/assets/logo.png?raw=true)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Descripción del Sitio Web
 
-### `npm test`
+![App Screenshot](https://github.com/ggarcia06/PF2-GGarcia/blob/main/src/assets/ECOMMERCEG2.png?raw=true)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Autor
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [@ggarcia06](https://github.com/ggarcia06)  German Garcia
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Referencia de colores
 
-### `npm run eject`
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Example Color | ![#4b6464](https://via.placeholder.com/10/4b6464?text=+) #4b6464 |
+| Example Color | ![#555757](https://via.placeholder.com/10/555757?text=+) #555757 |
+| Example Color | ![#cde4e3](https://via.placeholder.com/10/cde4e3?text=+) #cde4e3 |
+| Example Color | ![#29514f](https://via.placeholder.com/10/29514f?text=+) #29514f |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Instalación
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clonar proyecto de github
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1- Copiar la direccion url del repositorio
 
-## Learn More
+2- Abrir Git bash
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3- Cambiar el directorio actual a la direccion donde se va a guardar el repositorio
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4- Escriba ```
+git clone ``` 
+y la direccion url que habia copiado anteriormente
 
-### Code Splitting
+5- Instalar las dependencias
+```bash
+  npm install 
+  cd my-project
+```
+    
+## Estructura del proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Componentes
 
-### Analyzing the Bundle Size
+* Cart: Hace uso de las variables generadas en el contexto para renderizar los elementos agregados al carrito, generar el total de la compra y recopilar datos del usuario para finalizar el proceso de compra, en caso de no tener ningun item, muestra el mensaje de carrito vacio y el boton para volver a la pagina principal donde se encuentran todos los productos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* CartWidget: Contiene el componente con el icono del carrito y muestra la varible totalWidget que indica el numero de elementos agregados.
 
-### Making a Progressive Web App
+* ItemDetailContainer: maneja la logica para traer el producto selecionado por el usuario para verlo en detalle.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* ItemDetail: renderiza el detalle del producto y es desde aqui donde se agrega el producto al carrito
 
-### Advanced Configuration
+* ItemCount: Corresponde al contador para agregar un numero de items al carrito, se muestra dentro del detalle del producto seleccionado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* ItemListContainer: hace la solicitud a la base de datos en Firebase para traer todo el listado de productos.
 
-### Deployment
+* ItemList: Utiliza un map para renderizar todos los productos a traves del componente Item
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Item: Contiene un componente card de boostrap para mostrar la informacion de cada item
 
-### `npm run build` fails to minify
+* Navbar: Contiene un componente de Boostrap para la barra de navegacion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Contexts
+
+Maneja la logica del carrito, como las variables y funciones que se requieren usar en otros componentes, como lo son: el numero de items agregados, la suma total de los valores de cada item, funciones de vaciar, remover o agregar.
+
+### Services
+
+Contiene el archivo con la configuracion de Firebase para acceder a las bases de datos donde alojamos toda la informacion de nuestros productos y  la base de datos con la informacion de cada compra realizada en nuestra web
+
+
+
+
