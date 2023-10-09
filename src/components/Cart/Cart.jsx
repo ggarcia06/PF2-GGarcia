@@ -7,11 +7,6 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../services/firebase/firebaseConfig';
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
-
-
 
 
 export const Cart = () => {
@@ -56,7 +51,6 @@ export const Cart = () => {
         setFormValues(prev => ({ ...prev, [e.target.name]: e.target.value, }))
     }
 
-
     if (!totalWidget) {
         return (
             <div className="cartbg">
@@ -82,8 +76,8 @@ export const Cart = () => {
                             </div>
                         ))}
                         </div>
-                        <div>
 
+                        <div>
                         </div>
                         <div className="orderSummary">
                             <h3>Resumen de compra:</h3>
@@ -99,32 +93,35 @@ export const Cart = () => {
                                 <h5>INGRESAR DATOS DE USUARIO</h5>
                                 <div className="form">
                                     <>
-                                        <Form.Label htmlFor="inputPassword5" className="label">Nombre</Form.Label>
+                                        <Form.Label htmlFor="name" className="label">Nombre</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            id="inputPassword5"
+                                            id="name"
                                             aria-describedby="passwordHelpBlock"
                                             value={formValues.name}
                                             onChange={handleChange}
                                             name="name"
+                                            autoComplete="name"
                                         />
-                                        <Form.Label htmlFor="inputPassword5" className="label">email</Form.Label>
+                                        <Form.Label htmlFor="email" className="label">email</Form.Label>
                                         <Form.Control
                                             type="email"
-                                            id="inputPassword5"
+                                            id="email"
                                             aria-describedby="passwordHelpBlock"
                                             value={formValues.email}
                                             onChange={handleChange}
                                             name="email"
+                                            autoComplete="email"
                                         />
-                                        <Form.Label htmlFor="inputPassword5" className="label">Telefono</Form.Label>
+                                        <Form.Label htmlFor="telephone" className="label">Telefono</Form.Label>
                                         <Form.Control
                                             type="tel"
-                                            id="inputPassword5"
+                                            id="telephone"
                                             aria-describedby="passwordHelpBlock"
                                             value={formValues.phone}
                                             onChange={handleChange}
                                             name="phone"
+                                            autoComplete="telephone"
                                         />
 
                                     </>
@@ -134,8 +131,6 @@ export const Cart = () => {
 
                         </div>
                     </div>
-
-
                 </Container>
             </main>
         )

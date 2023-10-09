@@ -1,6 +1,5 @@
 import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
-//import data from '../../data/products.json';
 import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from "firebase/firestore";
@@ -13,7 +12,6 @@ const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams();
 
     useEffect(() => {
-        //const db = getFirestore();
 
         const refCollection = categoryId
             ? query(collection(db, "productos"), where("category", "==", categoryId))
@@ -38,24 +36,6 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId])
 
     if (loading) return <div>Loading . . .</div>
-
-    // useEffect(() => {
-    //     const promise = new Promise((resolve, reject) => {
-    //         setTimeout(() => resolve(data), 2000);
-    //     });
-
-    //     promise.then((data) => {
-    //         if (!id) {
-    //             setProducts(data);
-    //         } else {
-    //             const productsFiltered = data.filter(
-    //                 (product) => product.category === id  
-    //             );
-    //             setProducts(productsFiltered);
-    //         }
-
-    //     });
-    // }, [id]);
 
     return (
         <Container className="mt-4">

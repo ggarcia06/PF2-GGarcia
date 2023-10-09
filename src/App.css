@@ -1,6 +1,15 @@
 span {
-  color: white;
+  color: black;
   font-size: 20px;
+}
+
+.totalWidget{
+  color: black;
+  font-size: 20px;
+  background-color: white;
+  padding: 0 5px 2px 5px;
+  border-radius: 9px;
+  text-decoration: none;
 }
 
 #cart {
@@ -69,6 +78,10 @@ span {
 
 .item-detail h2 {
   font-size: 22px;
+}
+
+.item-detail h3 {
+  font-size: 20px;
 }
 
 .add {
@@ -201,7 +214,7 @@ span {
 
 .userData {
   margin-top: 40px;
-  color:#394646;
+  color: #394646;
   padding-top: 45px;
   background-color: #96b3b3;
   width: 600px;
@@ -215,7 +228,8 @@ span {
 .label {
   color: #394646;
 }
-.cont{
+
+.cont {
   display: flex;
   justify-content: center;
 }
